@@ -1,13 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using News.Domain.Entities;
+
 
 namespace News.Domain
 {
-    public class AppDbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
-        
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+        public DbSet<TextFileds> TextFields { get; set; }
+        public DbSet<Item> Items { get; set; }
+
     }
 }
