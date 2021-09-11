@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +11,7 @@ using News.Domain;
 using News.Domain.Repositories.Abstract;
 using News.Domain.Repositories.EntityFramework;
 using News.Models;
+using News.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,12 +76,12 @@ namespace News
             });
 
             //добавляем сервисы для контроллеров и представлений (MVC)
-            //services.AddControllersWithViews(x =>
-            //{
-            //    x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
-            //})
-            //    //выставляем совместимость с asp.net core 3.0
-            //    .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
+            services.AddControllersWithViews(x =>
+            {
+                x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+            })
+                //выставляем совместимость с asp.net core 3.0
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -103,8 +105,8 @@ namespace News
             {
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute("Redactor", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute("Coresp", "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute("Redactor", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute("Coresp", "{controller=Home}/{action=Index}/{id?}");
 
             });
         }
