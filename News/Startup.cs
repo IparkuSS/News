@@ -1,15 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using News.Domain;
-using News.Domain.Repositories.Abstract;
-using News.Domain.Repositories.EntityFramework;
+
+
 using News.Models;
 using News.Services;
 using System;
@@ -41,9 +39,9 @@ namespace News
             Configuration.Bind("Project", new Config());
 
             //подключаем нужный функционал приложения в качестве сервисов
-            services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
+         /*   services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
             services.AddTransient<IItemRepository, EFItemRepository>();
-            services.AddTransient<DataManager>();
+            services.AddTransient<DataManager>();*/
 
             //подключаем контекст БД
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Config.ConnectionString));
@@ -72,6 +70,8 @@ namespace News
             //настраиваем политику авторизации для Admin area
             services.AddAuthorization(x =>
             {
+                x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
+
                 x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
             });
 
