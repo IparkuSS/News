@@ -8,7 +8,6 @@ C:\Users\Lenovo\source\repos\News\News\bin\Debug\net5.0\ref\News.dll
 C:\Users\Lenovo\source\repos\News\News\bin\Debug\net5.0\News.pdb
 C:\Users\Lenovo\source\repos\News\News\bin\Debug\net5.0\News.Views.dll
 C:\Users\Lenovo\source\repos\News\News\bin\Debug\net5.0\News.Views.pdb
-C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\News.csprojAssemblyReference.cache
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\News.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\News.AssemblyInfoInputs.cache
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\News.AssemblyInfo.cs
@@ -80,3 +79,4 @@ C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\Razor\Views\Account\Logi
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\Lenovo\source\repos\News\News\obj\Debug\net5.0\News.csprojAssemblyReference.cache
